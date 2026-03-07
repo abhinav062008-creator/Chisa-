@@ -167,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========== ANDROID API CALL WITH RETRY LOGIC ==========
     async function callAPIWithRetry(message, maxRetries = 3) {
         if (!navigator.onLine) {
+            console.log('📤 Sending to API:', message);
+console.log('📡 API URL:', window.location.origin + '/api/chat');
             console.log('📱 Offline - using local response');
             return null;
         }
